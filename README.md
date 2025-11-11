@@ -1,9 +1,9 @@
 
-![GitHub repo size](https://img.shields.io/github/repo-size/The-TTT-Syndicate/task-time-tracker-redot)
-![GitHub License](https://img.shields.io/github/license/The-TTT-Syndicate/task-time-tracker-redot)
-![GitHub Created At](https://img.shields.io/github/created-at/The-TTT-Syndicate/task-time-tracker-redot)
-![GitHub forks](https://img.shields.io/github/forks/The-TTT-Syndicate/task-time-tracker-redot)
-![GitHub Repo stars](https://img.shields.io/github/stars/The-TTT-Syndicate/task-time-tracker-redot)
+![GitHub repo size](https://img.shields.io/github/repo-size/mg0x7BE/task-time-tracker-redot)
+![GitHub License](https://img.shields.io/github/license/mg0x7BE/task-time-tracker-redot)
+![GitHub Created At](https://img.shields.io/github/created-at/mg0x7BE/task-time-tracker-redot)
+![GitHub forks](https://img.shields.io/github/forks/mg0x7BE/task-time-tracker-redot)
+![GitHub Repo stars](https://img.shields.io/github/stars/mg0x7BE/task-time-tracker-redot)
 
 # Task Time Tracker in Redot Engine
 
