@@ -1,24 +1,27 @@
 
-![GitHub repo size](https://img.shields.io/github/repo-size/mg0x7BE/repository-template)
-![GitHub License](https://img.shields.io/github/license/mg0x7BE/repository-template)
-![GitHub Created At](https://img.shields.io/github/created-at/mg0x7BE/repository-template)
-![GitHub forks](https://img.shields.io/github/forks/mg0x7BE/repository-template)
-![GitHub Repo stars](https://img.shields.io/github/stars/mg0x7BE/repository-template)
+![GitHub repo size](https://img.shields.io/github/repo-size/The-TTT-Syndicate/task-time-tracker-redot)
+![GitHub License](https://img.shields.io/github/license/The-TTT-Syndicate/task-time-tracker-redot)
+![GitHub Created At](https://img.shields.io/github/created-at/The-TTT-Syndicate/task-time-tracker-redot)
+![GitHub forks](https://img.shields.io/github/forks/The-TTT-Syndicate/task-time-tracker-redot)
+![GitHub Repo stars](https://img.shields.io/github/stars/The-TTT-Syndicate/task-time-tracker-redot)
 
+# Task Time Tracker in Redot Engine
 
-# Template Repository
+A simple tool for tracking time spent on individual tasks. Works fine on Windows and macOS.
 
-This repository serves as a template for starting new projects.
+![task-time-tracker-redot.png](task-time-tracker-redot.png)
 
-## Features
+## Information
 
-- Easy setup
-- Customizable configurations
-- Some popular badges already in place
+Written in GDScript and [Redot Engine](https://github.com/Redot-Engine/) (I prefer Redot over Godot because the latter is run by weirdos).
 
-## Getting started
+## Issues
 
-To use this template, select it from the **Repository template** dropdown when creating a new repository.
+If you have any suggestions or problems with this program, feel free to open an issue - I'll be happy to help.
+
+## Contribution
+
+Any help and improvements are more than welcome!
 
 ## License
 

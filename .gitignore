@@ -401,9 +401,6 @@ FodyWeavers.xsd
 *.sln.iml
 .idea/*
 
-# Zed
-.zed/*
-
 # MacOS system file
 .DS_Store
 
@@ -421,11 +418,3 @@ export.cfg
 .mono/
 data_*/
 mono_crash.*.json
-
-# JetBrain CLion
-/build/
-cmake-build-*/
-cmake-build-debug/
-*.dSYM/
-*.o
-*.exe
