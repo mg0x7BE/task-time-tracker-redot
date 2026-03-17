@@ -11,6 +11,7 @@ on:
 
 env:
   REDOT_VERSION: "4.3.1-stable"
+  REDOT_TEMPLATE_VERSION: "4.3.1.stable"
 
 jobs:
   export:
@@ -30,9 +31,9 @@ jobs:
       - name: Download Redot Export Templates
         run: |
           wget -q "https://github.com/Redot-Engine/redot-engine/releases/download/redot-${REDOT_VERSION}/Redot_v${REDOT_VERSION}_export_templates.tpz" -O export_templates.tpz
-          mkdir -p ~/.local/share/godot/export_templates/${REDOT_VERSION}
+          mkdir -p ~/.local/share/redot/export_templates/${REDOT_TEMPLATE_VERSION}
           unzip -q export_templates.tpz
-          mv templates/* ~/.local/share/godot/export_templates/${REDOT_VERSION}/
+          mv templates/* ~/.local/share/redot/export_templates/${REDOT_TEMPLATE_VERSION}/
 
       - name: Export builds
         run: |
