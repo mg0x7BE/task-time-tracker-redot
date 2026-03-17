@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download Redot Editor (Linux x86_64)
         run: |
@@ -42,7 +42,7 @@ jobs:
           ./redot --headless --export-release "macOS" output/Task_Time_Tracker.zip
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: builds
           path: |
@@ -55,6 +55,7 @@ jobs:
         with:
           tag_name: "latest"
           name: "Auto-release"
+          body: "Built from commit ${{ github.sha }}"
           files: |
             output/Task_Time_Tracker.exe
             output/Task_Time_Tracker.zip
