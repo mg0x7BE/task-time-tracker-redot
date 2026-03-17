@@ -53,7 +53,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: "build-${{ github.sha }}"
+          tag_name: "latest"
           name: "Auto-release"
           files: |
             output/Task_Time_Tracker.exe
