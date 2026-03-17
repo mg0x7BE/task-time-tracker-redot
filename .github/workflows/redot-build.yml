@@ -1,0 +1,61 @@
+name: Redot Build and Release
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+env:
+  REDOT_VERSION: "4.3.1-stable"
+
+jobs:
+  export:
+    name: Export Windows & macOS
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download Redot Editor (Linux x86_64)
+        run: |
+          wget -q "https://github.com/Redot-Engine/redot-engine/releases/download/redot-${REDOT_VERSION}/Redot_v${REDOT_VERSION}_linux.x86_64.zip" -O redot-editor.zip
+          unzip -q redot-editor.zip
+          chmod +x Redot_v${REDOT_VERSION}_linux.x86_64
+          mv Redot_v${REDOT_VERSION}_linux.x86_64 redot
+
+      - name: Download Redot Export Templates
+        run: |
+          wget -q "https://github.com/Redot-Engine/redot-engine/releases/download/redot-${REDOT_VERSION}/Redot_v${REDOT_VERSION}_export_templates.tpz" -O export_templates.tpz
+          mkdir -p ~/.local/share/godot/export_templates/${REDOT_VERSION}
+          unzip -q export_templates.tpz
+          mv templates/* ~/.local/share/godot/export_templates/${REDOT_VERSION}/
+
+      - name: Export builds
+        run: |
+          mkdir -p output
+          ./redot --headless --export-release "Windows Desktop" output/Task_Time_Tracker.exe
+          ./redot --headless --export-release "macOS" output/Task_Time_Tracker.zip
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: builds
+          path: |
+            output/Task_Time_Tracker.exe
+            output/Task_Time_Tracker.zip
+
+      - name: Create GitHub Release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "build-${{ github.sha }}"
+          name: "Auto-release"
+          files: |
+            output/Task_Time_Tracker.exe
+            output/Task_Time_Tracker.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
