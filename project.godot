@@ -13,7 +13,7 @@ config_version=5
 config/name="Task Time Tracker"
 run/main_scene="res://main_ui.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-run/max_fps=64
+run/max_fps=30
 run/low_processor_mode=true
 boot_splash/bg_color=Color(0.227451, 0.00392157, 0.305882, 1)
 boot_splash/show_image=false
@@ -35,3 +35,7 @@ window/stretch/scale=2.0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+
+[os]
+
+run/low_processor_mode_sleep_usec=30000
