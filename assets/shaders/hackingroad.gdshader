@@ -3,7 +3,7 @@ shader_type canvas_item;
 uniform vec4 grid_color : source_color = vec4(1.0, 0.2, 0.8, 1.0);
 uniform vec4 background_color : source_color = vec4(0.05, 0.0, 0.1, 1.0);
 uniform float glow_intensity : hint_range(0.0, 1.0) = 1.0;
-uniform float ease_strength : hint_range(32.0, 34.0) = 10.0;
+uniform float ease_strength : hint_range(0.5, 10.0) = 2.0;
 
 void fragment() {
     vec2 uv = UV * 2.0 - 1.0;
@@ -19,7 +19,7 @@ void fragment() {
     float grid = 1.0 - smoothstep(0.0, 1.0, line_x);
     float glow = exp(-line_x * glow_intensity);
 
-    float base_time = TIME ;
+    float base_time = TIME;
 
     float cycle_position = fract(base_time*0.5);
 
